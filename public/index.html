@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DFA Simulator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <h1>DFA Simulator <span class="beta">BETA</span></h1>
+    <div class="regex" id="regex"></div>
+    <div class="alphabet" id="alphabet"></div>
+  </header>
+
+  <div class="panel-label">Input String</div>
+  <div class="controls">
+    <input id="input" type="text" maxlength="500" autocomplete="off" spellcheck="false">
+    <button id="validate">Validate</button>
+    <button id="simulate" class="primary">Simulate ▶</button>
+    <button id="step">Step ▸</button>
+    <button id="reset">Reset ↺</button>
+  </div>
+  <div class="examples" id="examples"></div>
+
+  <div style="margin-top:16px" class="tape" id="tape"></div>
+
+  <div class="panel-label" style="margin-top:18px">State Diagram</div>
+  <div class="diagram-wrap">
+    <svg id="diagram" preserveAspectRatio="xMidYMid meet"></svg>
+  </div>
+
+  <div class="status" id="status">Idle</div>
+
+  <div class="footer-controls">
+    <button id="show-cfg">Show CFG ⌘</button>
+    <button id="switch">Switch RegEx ⇄</button>
+  </div>
+</main>
+
+<div class="modal-backdrop" id="cfg-modal">
+  <div class="modal" role="dialog" aria-labelledby="modal-title">
+    <div class="modal-header">
+      <div class="modal-title" id="modal-title">Context-Free Grammar</div>
+      <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="panel-label" style="margin-bottom:8px">Productions</div>
+      <div class="grammar-rules" id="grammar-rules"></div>
+      <div class="grammar-note" id="grammar-note"></div>
+
+      <div class="derivation-section">
+        <h3>Derive a String</h3>
+        <div class="derivation-input">
+          <input id="deriv-input" type="text" placeholder="enter a string to derive" autocomplete="off" spellcheck="false">
+          <button id="deriv-btn" class="primary">Derive</button>
+        </div>
+        <div class="derivation-trace" id="deriv-trace">
+          <span style="color:var(--dim); font-style:italic">type a string above and click Derive</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
