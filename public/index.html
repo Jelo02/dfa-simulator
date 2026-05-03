@@ -9,7 +9,7 @@
 <body>
 <main>
   <header>
-    <h1>DFA Simulator <span class="beta">BETA</span></h1>
+    <h1>DFA Simulator</h1>
     <div class="regex" id="regex"></div>
     <div class="alphabet" id="alphabet"></div>
   </header>
@@ -19,7 +19,6 @@
     <input id="input" type="text" maxlength="500" autocomplete="off" spellcheck="false">
     <button id="validate">Validate</button>
     <button id="simulate" class="primary">Simulate ▶</button>
-    <button id="step">Step ▸</button>
     <button id="reset">Reset ↺</button>
   </div>
   <div class="examples" id="examples"></div>
@@ -36,6 +35,7 @@
   <div class="footer-controls">
     <button id="show-cfg">Show CFG ⌘</button>
     <button id="switch">Switch RegEx ⇄</button>
+    <button id="show-devs">Developers ⓘ</button>
   </div>
 </main>
 
@@ -59,6 +59,35 @@
         <div class="derivation-trace" id="deriv-trace">
           <span style="color:var(--dim); font-style:italic">type a string above and click Derive</span>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="devs-modal">
+  <div class="modal" role="dialog" aria-labelledby="devs-title">
+    <div class="modal-header">
+      <div class="modal-title" id="devs-title">Developers</div>
+      <button class="modal-close" id="devs-close" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="panel-label" style="margin-bottom:12px">Built by</div>
+      <ul class="devs-list">
+        <li>
+          <span class="dev-name">Developer One</span>
+          <span class="dev-role">Lead · Backend</span>
+        </li>
+        <li>
+          <span class="dev-name">Developer Two</span>
+          <span class="dev-role">Frontend · Design</span>
+        </li>
+        <li>
+          <span class="dev-name">Developer Three</span>
+          <span class="dev-role">Logic · Testing</span>
+        </li>
+      </ul>
+      <div class="grammar-note" style="margin-top:18px">
+        Course project · Theory of Computation
       </div>
     </div>
   </div>
